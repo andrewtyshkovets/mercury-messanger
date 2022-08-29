@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,13 +41,13 @@ public class User {
     @Column(nullable = false)
     private String phone;
 
-    @Column(nullable = false, name = "is_online")
-    private Boolean isOnline;
+    @Column(name = "is_online")
+    private boolean online;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, name = "image_url")
+    @Column(name = "image_url")
     private String imageUrl;
 
     @OneToMany(fetch = FetchType.LAZY)
