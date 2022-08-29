@@ -52,11 +52,11 @@ public class User {
     private String imageUrl;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sender_id", updatable = false, insertable = false, referencedColumnName = "id")
+    @JoinColumn(name = "user1_id", updatable = false, insertable = false, referencedColumnName = "id")
     private List<Chat> chatsSender;
 
     @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "receiver_id", updatable = false, insertable = false, referencedColumnName = "id")
+    @JoinColumn(name = "user2_id", updatable = false, insertable = false, referencedColumnName = "id")
     private List<Chat> chatsReceiver;
 
     @OneToMany(fetch = FetchType.LAZY)

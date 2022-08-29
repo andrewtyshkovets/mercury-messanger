@@ -33,4 +33,8 @@ public class ChatsService {
     public ChatDto getChatDtoById(Long chatId) {
         return chatsMapper.chatToChatDto(this.getChatById(chatId));
     }
+
+    public List<ChatDto> getAllChatsByUser(Long userId) {
+        return chatsRepository.findAllBySenderOrReceiver(userId).stream().map(chatsMapper::chatToChatDto).collect(Collectors.toList());
+    }
 }

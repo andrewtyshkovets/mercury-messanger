@@ -35,9 +35,11 @@ public class Chat {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "user1_id")
     private User sender;
 
     @ManyToOne
+    @JoinColumn(name = "user2_id")
     private User receiver;
 
     @OneToMany(fetch = FetchType.LAZY)

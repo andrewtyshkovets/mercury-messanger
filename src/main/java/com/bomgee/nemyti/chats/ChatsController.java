@@ -44,6 +44,13 @@ public class ChatsController {
         log.info("create chat");
        return chatsService.createChat(chatDto);
     }
+
+    @GetMapping("/chats/user/{userId}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<ChatDto> getChatsByUser(@PathVariable Long userId) {
+        log.info("get all chats");
+        return chatsService.getAllChatsByUser(userId);
+    }
 }
 
 
