@@ -11,7 +11,6 @@ import org.mapstruct.Mappings;
 public interface UsersMapper {
 
     @Mappings({
-            @Mapping(target = "password", ignore = true),
             @Mapping(target = "isOnline", source = "online")
     })
     UserDto userToUserDto(User user);
