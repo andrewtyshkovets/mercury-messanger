@@ -5,6 +5,7 @@ import com.bomgee.nemyti.messages.service.MessagesFacade;
 import com.bomgee.nemyti.messages.service.MessagesService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
+@CrossOrigin(value = "*")
 public class MessagesController {
 
     private final MessagesService messagesService;
