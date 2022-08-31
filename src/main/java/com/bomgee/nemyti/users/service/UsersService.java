@@ -1,5 +1,6 @@
 package com.bomgee.nemyti.users.service;
 
+import com.bomgee.nemyti.users.model.User;
 import com.bomgee.nemyti.users.model.UserDto;
 import com.bomgee.nemyti.users.repository.UsersRepository;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,10 @@ public class UsersService {
 
     public UserDto createUser(UserDto userDto) {
         return usersMapper.userToUserDto(usersRepository.save(usersMapper.userDtoToUser(userDto)));
+    }
+
+    public UserDto getUserById(Long userId) {
+        User user = usersRepository.findById(userId).orElseThrow(() -> new RuntimeException("No such User"));
+        return usersMapper.userToUserDto(user);
     }
 }
